@@ -25,6 +25,13 @@ function closeOutsideModal(e) {
 }
 window.addEventListener("click", closeOutsideModal);
 
+// show modal when pressing enter
+window.addEventListener("keyup", (e) => {
+  if (e.keyCode === 13) {
+    showModal();
+  }
+});
+
 // close modal when pressing escape
 window.addEventListener("keyup", (e) => {
   if (e.keyCode === 27) {
