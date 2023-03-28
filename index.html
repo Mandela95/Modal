@@ -6,33 +6,86 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Modal</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="modal.css">
 </head>
 
 <body>
 
-  <button id="showModalBtn" class="button">Show Modal</button>
+  <button data-modal="#modal1" class="button">Open Modal 1</button>
+  <button data-modal="#modal2" class="button">Open Modal 2</button>
+  <button data-modal="#modal3" class="button">Open Modal 3</button>
+  <button data-modal="#modal4" class="button">Open Modal 4</button>
 
-  <div id="modal-container" class="modal">
+  <div class="modal" id="modal1">
 
     <div class="modal-content">
       <div class="modal-header">
         <span class="close-btn">&times;</span>
-        <h2 class="header">Header</h2>
+        <h2 class="header">Header 1</h2>
       </div>
       <div class="modal-body">
-        <p class="body-content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta modi, quia, maiores
-          doloremque quisquam dolor
-          iure asperiores sed provident aut voluptatum magnam nostrum error, architecto nobis ratione dignissimos
-          dolorum laboeummsum dolor sit amet consectetur, adipisicing elit. Dicta modi, quia,
-          maiores doloremque quisquam dolor expedita ducimus, velit a tempora eum ullam, soluta fuga quam sit?
-          Harum totam in iure laboriosam.</p>
+        <p class="body-content">modal content 1 </p>
       </div>
-      <div class="modal-footer">
-        <h3 class="footer">Footer</h3>
-      </div>
+
     </div>
-    <div class="close-modal-btn">
+    <div class="nested-modal">
+      <p class="close-content">Are You Sure You Want To Close The Modal ?!</p>
+      <span class="yes">Yes</span>
+      <span class="no">No</span>
+    </div>
+
+  </div>
+  <div class="modal" id="modal2">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close-btn">&times;</span>
+        <h2 class="header">Header 2</h2>
+      </div>
+      <div class="modal-body">
+        <p class="body-content">modal content 2 </p>
+      </div>
+
+    </div>
+    <div class="nested-modal">
+      <p class="close-content">Are You Sure You Want To Close The Modal ?!</p>
+      <span class="yes">Yes</span>
+      <span class="no">No</span>
+    </div>
+
+  </div>
+  <div class="modal" id="modal3">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close-btn">&times;</span>
+        <h2 class="header">Header 3</h2>
+      </div>
+      <div class="modal-body">
+        <p class="body-content">modal content 3 </p>
+      </div>
+
+    </div>
+    <div class="nested-modal">
+      <p class="close-content">Are You Sure You Want To Close The Modal ?!</p>
+      <span class="yes">Yes</span>
+      <span class="no">No</span>
+    </div>
+
+  </div>
+  <div class="modal" id="modal4">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close-btn">&times;</span>
+        <h2 class="header">Header 4</h2>
+      </div>
+      <div class="modal-body">
+        <p class="body-content">modal content 4 </p>
+      </div>
+
+    </div>
+    <div class="nested-modal">
       <p class="close-content">Are You Sure You Want To Close The Modal ?!</p>
       <span class="yes">Yes</span>
       <span class="no">No</span>
@@ -40,7 +93,7 @@
 
   </div>
 
-  <script src="script.js"></script>
+  <script src="modal.js"></script>
 </body>
 
 </html>
