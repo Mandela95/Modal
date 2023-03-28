@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
 }
+
 .button {
   background-color: coral;
   color: #fff;
@@ -10,12 +11,17 @@
   padding: 10px 20px;
   border: none;
   outline: none;
+  transition: .2s;
 }
 
 .button:hover {
   cursor: pointer;
   background-color: #666;
   color: #fff;
+}
+
+.button:focus {
+  transform: scale(.9);
 }
 
 .modal {
@@ -30,10 +36,12 @@
   background-color: rgba(0, 0, 0, 0.4);
   animation: smooth 2s;
 }
+
 @keyframes smooth {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -44,7 +52,7 @@
   text-align: center;
   width: 70%;
   box-shadow: 0 0 5px 5px #666;
-  transition: 1s;
+  /* transition: 1s; */
   position: relative;
   top: 50%;
   left: 50%;
@@ -73,16 +81,12 @@
   color: #777;
 }
 
-.footer {
-  background-color: coral;
-  padding: 10px;
-}
 
-.close-modal-btn {
+.nested-modal {
   display: none;
   background-color: #000;
   text-align: center;
-  transition: 1s;
+  /* transition: 1s; */
   color: #fff;
   z-index: 5;
   position: absolute;
