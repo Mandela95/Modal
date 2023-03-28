@@ -1,60 +1,63 @@
-let $modalContainer = document.getElementById("modal-container");
+let $showModalBtns = document.querySelectorAll(".button");
+let $modals = document.querySelectorAll(".modal");
 let $modalContent = document.querySelector(".modal-content");
-let $showModalBtn = document.getElementById("showModalBtn");
-let $closeBtn = document.querySelector(".close-btn");
-let $closeModalBtn = document.querySelector(".close-modal-btn");
+let $closeBtn = document.querySelectorAll(".close-btn");
+let $nestedModal = document.querySelectorAll(".nested-modal");
 let $yes = document.querySelector(".yes");
 let $no = document.querySelector(".no");
 
-// show modal
-function showModal() {
-  $modalContainer.style.display = "block";
-  $modalContent.style.opacity = "1";
-}
-
-$showModalBtn.addEventListener("click", showModal);
-
-// hide modal
-function hideModal() {
-  $modalContainer.style.display = "none";
-}
-
-// close when click outside modal
-function closeOutsideModal(e) {
-  if (e.target == $modalContainer) {
-    $modalContainer.style.display = "none";
-    $closeModalBtn.style.display = "none";
-  }
-}
-
-window.addEventListener("click", closeOutsideModal);
-
-// show modal inside modal
-$closeBtn.addEventListener("click", function () {
-  $closeModalBtn.style.display = "block";
-  $modalContent.style.opacity = ".5";
+// open modal when button clicked
+$showModalBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const modal = document.querySelector(btn.dataset.modal);
+    modal.style.display = "block";
+  });
 });
 
+// close any modal when click X
+$closeBtn.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const modal = btn.closest(".modal");
+    modal.style.display = "none";
+  });
+});
+
+// close any modal when click outside modal content
+$modals.forEach((modal) => {
+  window.addEventListener("click", (e) => {
+    if (e.target == modal) {
+      modal.style.display = "none";
+    }
+  });
+});
+
+// show modal inside modal
+// didn't work ?????
+$closeBtn.onclick = function () {
+  $nestedModal.style.display = "block";
+};
+
 $yes.onclick = function () {
-  $modalContainer.style.display = "none";
-  $closeModalBtn.style.display = "none";
+  $nestedModal.style.display = "none";
+  document.querySelector(".modal").style.display = "none";
 };
 
 $no.onclick = function () {
-  $closeModalBtn.style.display = "none";
-  $modalContent.style.opacity = "1";
+  $nestedModal.style.display = "none";
 };
 
 // show modal when pressing enter
 window.addEventListener("keyup", (e) => {
   if (e.keyCode === 13) {
-    showModal();
+    document.querySelector(".modal").style.display = "block";
   }
 });
 
-// close modal when pressing escape
-window.addEventListener("keyup", (e) => {
-  if (e.keyCode === 27) {
-    hideModal();
-  }
+// close any modal when pressing escape
+$modals.forEach((modal) => {
+  window.addEventListener("keyup", (e) => {
+    if (e.keyCode === 27) {
+      modal.style.display = "none";
+    }
+  });
 });
